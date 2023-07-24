@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Food Order App</string>
+    <string name="fast_food_order_app">Fast Food Order App</string>
+    <string name="_30min_delivery_food">30min Delivery Food</string>
+    <string name="enjoy_the_restaurant_meals_at_home">Enjoy the restaurant meals at home</string>
+    <string name="design_by_joyal_dsilva">Design by Joyal Dsilva</string>
+    <string name="next">Next</string>
+</resources>
