@@ -5,4 +5,15 @@
     <string name="enjoy_the_restaurant_meals_at_home">Enjoy the restaurant meals at home</string>
     <string name="design_by_joyal_dsilva">Design by Joyal Dsilva</string>
     <string name="next">Next</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="login_page">Login Page</string>
+    <string name="register_page">Register Page</string>
+    <string name="do_not_have_an_account">Do not have an Account?</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="create">Create</string>
+    <string name="already_have_an_account">Already have an Account!</string>
+    <string name="registation_page">Registation Page</string>
 </resources>
