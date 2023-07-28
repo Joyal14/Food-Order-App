@@ -9,7 +9,7 @@ android {
     compileSdk 33
 
     buildFeatures {
-        viewBinding = true
+        viewBinding  true
     }
 
     defaultConfig {
@@ -45,6 +45,15 @@ dependencies {
     // Add the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-auth-ktx")
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'

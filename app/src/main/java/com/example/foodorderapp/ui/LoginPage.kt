@@ -33,8 +33,6 @@ class LoginPage : AppCompatActivity() {
     private lateinit var loginBinding: ActivityLoginPageBinding
 
 
-    var isAllFieldsChecked = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loginBinding = ActivityLoginPageBinding.inflate(layoutInflater)
@@ -55,6 +53,7 @@ class LoginPage : AppCompatActivity() {
 
         //lets get the users email and password
         loginBinding.btnLogin.setOnClickListener {
+            checkAllField()
             performLogin()
         }
 
@@ -146,7 +145,7 @@ class LoginPage : AppCompatActivity() {
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
         auth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
-                val intent = Intent(this, RegistationPage::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
 
             } else {
