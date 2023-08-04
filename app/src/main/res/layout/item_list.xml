@@ -1,4 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:background="@color/black"-->
+<!--    android:padding="8dp">-->
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/cardView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="300dp"-->
+<!--        app:cardCornerRadius="25dp"-->
+<!--        app:cardElevation="8dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="300dp"-->
+<!--            android:padding="8dp"-->
+<!--            tools:ignore="TextSizeCheck">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imgNews"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="190dp"-->
+<!--                android:contentDescription="TODO"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/images"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                tools:ignore="ContentDescription,HardcodedText" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtTitle"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:text="Title"-->
+<!--                android:textColor="@android:color/black"-->
+<!--                android:textSize="20dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/imgNews" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtdisplay"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:text="Link"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/txtTitle" />-->
+
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,8 +79,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,45 +88,66 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
+            android:background="@color/black"
             android:padding="8dp"
             tools:ignore="TextSizeCheck">
 
             <ImageView
                 android:id="@+id/imgNews"
-                android:layout_width="match_parent"
-                android:layout_height="190dp"
-                android:contentDescription="TODO"
+                android:layout_width="160dp"
+                android:layout_height="120dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/images"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="TODO"
                 tools:ignore="ContentDescription,HardcodedText" />
 
             <TextView
-                android:id="@+id/txtTitle"
-                android:layout_width="match_parent"
+                android:id="@+id/txtAuthor"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:textSize="20dp"
-                android:text="Title"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgNews" />
 
             <TextView
-                android:id="@+id/txtdisplay"
-                android:layout_width="match_parent"
+                android:id="@+id/txtTitle"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/imgNews"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtdisplay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:text="Link"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgNews"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
+            <TextView
+                android:id="@+id/txt_url"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text=""
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAuthor" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

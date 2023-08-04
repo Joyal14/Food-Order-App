@@ -10,11 +10,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.foodorderapp.R
-import com.example.foodorderapp.pojo.Meal
-import com.example.foodorderapp.pojo.MealLists
-import retrofit2.Callback
+import com.example.foodorderapp.pojo.Category
 
-class MealAdapter(private val context: Context, private val meal:List<Meal>) : RecyclerView.Adapter<MealAdapter.MealViewHolder>(){
+class CategoryAdapter(private val context: Context, private val categories:List<Category>) : RecyclerView.Adapter<CategoryAdapter.MealViewHolder>(){
     inner class MealViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var mealImage: ImageView = itemView.findViewById(R.id.imgNews)
         var title: TextView = itemView.findViewById(R.id.txtTitle)
@@ -28,19 +26,19 @@ class MealAdapter(private val context: Context, private val meal:List<Meal>) : R
     }
 
     override fun getItemCount(): Int {
-       return meal.size
+       return categories.size
     }
 
     override fun onBindViewHolder(holder: MealViewHolder, position: Int) {
-        val meal = meal[position]
+        val meal = categories[position]
         holder.title.text = meal.strCategory
-        holder.display.text = meal.strMeal
+        holder.display.text = meal.strCategoryDescription
 
         //for Image display need to use Glide lb retrofit not support imageView
-        Glide.with(context).load(meal.strMealThumb).into(holder.mealImage)
+        Glide.with(context).load(meal.strCategoryThumb).into(holder.mealImage)
 
         holder.itemView.setOnClickListener {
-            Toast.makeText(context, meal.strMeal, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, meal.strCategory, Toast.LENGTH_SHORT).show()
         }
 
     }
