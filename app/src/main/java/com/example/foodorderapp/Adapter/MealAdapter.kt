@@ -1,20 +1,23 @@
 package com.example.foodorderapp.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.foodorderapp.R
-import com.example.foodorderapp.pojo.Meal
-import com.example.foodorderapp.pojo.MealLists
-import retrofit2.Callback
+import com.example.foodorderapp.fragment.SearchFragment
+import com.example.foodorderapp.pojo.CategoryList
+import com.example.foodorderapp.ui.StartActivity
 
-class MealAdapter(private val context: Context, private val meal:List<Meal>) : RecyclerView.Adapter<MealAdapter.MealViewHolder>(){
+
+class MealAdapter(private val context: Context, private val category:List<CategoryList>) : RecyclerView.Adapter<MealAdapter.MealViewHolder>(){
     inner class MealViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var mealImage: ImageView = itemView.findViewById(R.id.imgNews)
         var title: TextView = itemView.findViewById(R.id.txtTitle)
@@ -28,19 +31,20 @@ class MealAdapter(private val context: Context, private val meal:List<Meal>) : R
     }
 
     override fun getItemCount(): Int {
-       return meal.size
+       return category.size
     }
 
     override fun onBindViewHolder(holder: MealViewHolder, position: Int) {
-        val meal = meal[position]
+        val meal = category[position]
         holder.title.text = meal.strCategory
-        holder.display.text = meal.strMeal
+        holder.display.text = meal.strCategoryDescription
 
         //for Image display need to use Glide lb retrofit not support imageView
-        Glide.with(context).load(meal.strMealThumb).into(holder.mealImage)
+        Glide.with(context).load(meal.strCategoryThumb).into(holder.mealImage)
 
         holder.itemView.setOnClickListener {
-            Toast.makeText(context, meal.strMeal, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, meal.strCategory, Toast.LENGTH_SHORT).show()
+
         }
 
     }

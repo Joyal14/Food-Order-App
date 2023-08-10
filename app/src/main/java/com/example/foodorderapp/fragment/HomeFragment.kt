@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodorderapp.Adapter.MealAdapter
 import com.example.foodorderapp.databinding.FragmentHomeBinding
+import com.example.foodorderapp.pojo.Category
 import com.example.foodorderapp.pojo.MealLists
 import com.example.foodorderapp.retrofit.RetrofitInstance
 import retrofit2.Call
@@ -19,8 +20,8 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var myadapter: MealAdapter
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var mealsList : ArrayList<MealLists>
+//    private lateinit var recyclerView: RecyclerView
+//    private lateinit var Category : ArrayList<Category>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,19 +42,18 @@ class HomeFragment : Fragment() {
     }
     private fun getNews() {
         val meals = RetrofitInstance.foodApi.getRandomMeal()
-        meals.enqueue(object : retrofit2.Callback<MealLists> {
-            override fun onResponse(call: Call<MealLists>, response: Response<MealLists>) {
+        meals.enqueue(object : retrofit2.Callback<Category> {
+            override fun onResponse(call: Call<Category>, response: Response<Category>) {
                 val meals = response.body()
                 if (meals != null) {
                     Log.d("News error", meals.toString())
-                    myadapter = context?.let { MealAdapter(it,meals.meals) }!!
+                    myadapter = context?.let { MealAdapter(it,meals.categories) }!!
                     binding.rvItem.adapter = myadapter
                     binding.rvItem.layoutManager = LinearLayoutManager(context)
                 }
             }
 
-
-            override fun onFailure(call: Call<MealLists>, t: Throwable) {
+            override fun onFailure(call: Call<Category>, t: Throwable) {
                 Log.d("News error", "Error in Fetching in news")
             }
         })
